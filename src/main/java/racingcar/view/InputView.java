@@ -1,6 +1,9 @@
 package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import racingcar.util.CarStatus;
+
+import java.util.List;
 
 public class InputView {
     public String getUserInput() {
@@ -10,12 +13,18 @@ public class InputView {
     /**
      * 경주할 자동차 이름 리스트
      */
-    public void readGameCars() {
-
+    public List<String> readGameCars() {
+        String userInput = getUserInput();
+        return checkGameCars(userInput);
     }
 
-    public void checkGameCars(String userInput) {
+    public List<String> checkGameCars(String userInput) {
+        InputException.nullException(userInput);
+        InputException.notStartEndWithComma(userInput);
 
+        List<String> inputList = List.of(userInput.split(CarStatus.COMMA.getStatus()));
+        InputException.checkEachCarNameException(inputList);
+        return inputList;
     }
 
     /**

@@ -17,9 +17,18 @@ public class InputExceptionTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"", " "})
-    public void null_test(String userInput) {
+    public void overNameSize_test(String userInput) {
         assertThatThrownBy(()->{
             InputException.overNameSizeException(userInput);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " "})
+    public void notStartEndWithComma_test(String userInput) {
+        assertThatThrownBy(()->{
+            InputException.notStartEndWithComma(userInput);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 }
