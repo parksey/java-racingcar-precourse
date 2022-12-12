@@ -9,7 +9,7 @@ public class InputView {
     public String getUserInput() {
         return Console.readLine();
     }
-    
+
     /**
      * 경주할 자동차 이름 리스트
      * @return
