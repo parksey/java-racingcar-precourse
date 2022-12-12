@@ -41,5 +41,11 @@ public class InputExceptionTest {
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
-    
+    @ParameterizedTest
+    @ValueSource(strings = {"0"})
+    public void isZero_test(String userInput) {
+        assertThatThrownBy(()->{
+            InputException.zeroException(userInput);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
 }
