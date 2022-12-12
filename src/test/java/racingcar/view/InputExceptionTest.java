@@ -34,10 +34,12 @@ public class InputExceptionTest {
 
 
     @ParameterizedTest
-    @ValueSource(strings = {"", " "})
+    @ValueSource(strings = {"5ㄱ", "ㅁ12"})
     public void notNumberExce_testption(String userInput) {
         assertThatThrownBy(()->{
             InputException.notNumberException(userInput);
         }).isInstanceOf(IllegalArgumentException.class);
     }
+
+    
 }

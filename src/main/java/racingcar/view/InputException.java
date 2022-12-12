@@ -30,4 +30,16 @@ public class InputException {
             throw new IllegalArgumentException("차량 이름의 길이가 한도를 넘었습니다.");
         }
     }
+
+    public static void notNumberException(String userInput) {
+        for(int inputIndex = 0; inputIndex < userInput.length(); inputIndex++) {
+            isDigitException(userInput.charAt(inputIndex));
+        }
+    }
+
+    public static void isDigitException(char input) {
+        if (!Character.isDigit(input)) {
+            throw new IllegalArgumentException("숫자가 아닙니다.");
+        }
+    }
 }
