@@ -31,10 +31,12 @@ public class InputView {
      * 시도할 회수 입력 받는 함수
      */
     public void readGameTern() {
-
+        String userInput = getUserInput();
+        checkGameTern(userInput);
     }
 
     public void checkGameTern(String userInput) {
-
+        InputException.nullException(userInput);
+        InputException.notNumberException(userInput);
     }
 }
