@@ -42,4 +42,10 @@ public class InputException {
             throw new IllegalArgumentException("숫자가 아닙니다.");
         }
     }
+
+    public static void zeroException(String userInput) {
+        if (userInput.equals(CarStatus.ZERO.getStatus())) {
+            throw new IllegalArgumentException("0값은 게임을 시작할 수 없습니다.");
+        }
+    }
 }

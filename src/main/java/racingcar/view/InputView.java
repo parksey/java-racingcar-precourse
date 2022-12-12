@@ -9,9 +9,10 @@ public class InputView {
     public String getUserInput() {
         return Console.readLine();
     }
-
+    
     /**
      * 경주할 자동차 이름 리스트
+     * @return
      */
     public List<String> readGameCars() {
         String userInput = getUserInput();
@@ -29,14 +30,17 @@ public class InputView {
 
     /**
      * 시도할 회수 입력 받는 함수
+     * @return
      */
-    public void readGameTern() {
+    public long readGameTern() {
         String userInput = getUserInput();
         checkGameTern(userInput);
+        return Long.parseLong(userInput);
     }
 
     public void checkGameTern(String userInput) {
         InputException.nullException(userInput);
+        InputException.zeroException(userInput);
         InputException.notNumberException(userInput);
     }
 }
