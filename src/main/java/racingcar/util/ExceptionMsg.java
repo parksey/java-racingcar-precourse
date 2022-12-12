@@ -1,6 +1,7 @@
 package racingcar.util;
 
 public enum ExceptionMsg {
+    ERROR("[ERROR] "),
     NULL("아무 값도 입력하지 않았습니다."),
     NOT_FORMAT("잘못된 입력 형식입니다."),
     OVER_SIZE("차량 이름의 길이가 한도를 넘었습니다."),
@@ -14,6 +15,6 @@ public enum ExceptionMsg {
     }
 
     public String getMsg() {
-        return msg;
+        return ERROR.msg + msg;
     }
 }

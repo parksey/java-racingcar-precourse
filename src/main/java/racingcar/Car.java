@@ -9,4 +9,11 @@ public class Car {
     }
 
     // 추가 기능 구현
+    public static Car of(String name) {
+        return new Car(name);
+    }
+
+    public String getName() {
+        return name;
+    }
 }
