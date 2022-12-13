@@ -2,7 +2,8 @@ package racingcar.util;
 
 public enum CarStatus {
     ZERO("0"),
-    COMMA(",");
+    COMMA(","),
+    MOVE("-");
 
     private final String status;
 

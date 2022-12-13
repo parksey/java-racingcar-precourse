@@ -1,12 +1,13 @@
 package racingcar.domain;
 
-import racingcar.Car;
+import racingcar.util.CarCode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameCars {
-    List<Car> cars;
+    private List<Car> cars;
+    private long totalCount;
 
     public GameCars(List<Car> cars) {
         this.cars = cars;
@@ -27,4 +28,27 @@ public class GameCars {
     public List<Car> getCars() {
         return cars;
     }
+
+    public void setTotalCont(long totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public void move() {
+        for (Car car : cars) {
+            eachMove(car);
+        }
+    }
+
+    public void eachMove(Car car) {
+        car.move(Move.canMove());
+    }
+
+    public boolean isFinish() {
+        totalCount--;
+        if (totalCount == CarCode.ZERO.getCode()) {
+            return true;
+        }
+        return false;
+    }
+
 }
